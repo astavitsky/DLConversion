@@ -422,7 +422,7 @@ function ConvertFrom-DN
             {
                 switch ($item.TrimStart().Substring(0,2)) 
                 {
-                    'CN' {$CN = '/' + $item.Replace("CN=","")}
+                    'CN' {$CN = '/' + $item.Replace("CN=","").Replace("/","\/")}
 
                     'OU' {$OU += ,$item.Replace("OU=","");$OU += '/'}
 
